@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "build": "yarn run clean-dist && ../node_modules/.bin/webpack --config=configs/webpack/prod.js && mv dist/*.wasm dist/js",
-    "clean-dist": "../node_modules/.bin/rimraf dist/*",
-    "lint": "../node_modules/.bin/eslint './src/**/*.{js,ts,tsx}' --quiet",
+    "build": "yarn run clean-dist && webpack --config=configs/webpack/prod.js && mv dist/*.wasm dist/js",
+    "clean-dist": "rimraf dist/*",
+    "lint": "eslint './src/**/*.{js,ts,tsx}' --quiet",
     "start": "yarn run start-dev",
     "test": "yarn run start-model-test",
-    "start-dev": "../node_modules/.bin/webpack serve --config=configs/webpack/dev.js"
+    "start-dev": "webpack serve --config=configs/webpack/dev.js"
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",
